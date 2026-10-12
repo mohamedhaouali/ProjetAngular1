@@ -1,0 +1,113 @@
+
+  <!-- ================ contact section start ================= -->
+  <section class="contact-section section_padding">
+    <div class="container">
+ 
+
+
+      <div class="row">
+        <div class="col-12">
+          <h2 class="contact-title">Add Chef</h2>
+        </div>
+        <div class="col-lg-8">
+          <form class="form-contact contact_form"  method="post" id="contactForm"
+            novalidate="novalidate" [formGroup]="addchefForm">
+            <div class="row">
+           
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <input class="form-control"  formControlName="name" name="name" id="name" type="text"  placeholder='Enter your First Name'>
+                </div>
+              </div>
+
+  <div *ngIf="addchefForm.controls['name'].invalid && 
+  (addchefForm.controls['name'].touched || addchefForm.controls['name'].dirty)"
+  
+   class="text-danger">
+
+    <div>
+
+      <div *ngIf="addchefForm.controls['name'].errors?.['required']"> Name is required</div>
+      <div *ngIf="addchefForm.controls['name'].errors?.['minlength']"> Name must be at least 3 characters long</div>
+      <div *ngIf="addchefForm.controls['name'].errors?.['pattern']"> Name must contain only letters</div>
+    </div>
+  </div>
+
+
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <input class="form-control" formControlName="specialite" name="specialite" id="specialite" type="text" 
+                     placeholder='Enter specialite'>
+                </div>
+              </div>
+
+               <div *ngIf="addchefForm.controls['specialite'].invalid && 
+  (addchefForm.controls['specialite'].touched || addchefForm.controls['specialite'].dirty)"
+  
+   class="text-danger">
+
+    <div>
+
+      <div *ngIf="addchefForm.controls['specialite'].errors?.['required']"> Specialite is required</div>
+      <div *ngIf="addchefForm.controls['specialite'].errors?.['minlength']"> Specialite must be at least 3 characters long</div>
+      <div *ngIf="addchefForm.controls['specialite'].errors?.['pattern']"> Specialite must contain only letters</div>
+    </div>
+  </div>
+
+                 <div class="col-sm-12">
+                <div class="form-group">
+                  <input class="form-control"  formControlName="exprience"name="exprience" id="text" type="number" 
+                 placeholder='Enter exprience'>
+                </div>
+              </div>
+
+              
+               <div *ngIf="addchefForm.controls['exprience'].invalid && 
+  (addchefForm.controls['exprience'].touched || addchefForm.controls['exprience'].dirty)"
+  
+   class="text-danger">
+
+    <div>
+
+      <div *ngIf="addchefForm.controls['exprience'].errors?.['required']"> exprience is required</div>
+      <div *ngIf="addchefForm.controls['exprience'].errors?.['minlength']"> exprience must be at least 2 characters long</div>
+      <div *ngIf="addchefForm.controls['exprience'].errors?.['pattern']"> exprience must contain only letters</div>
+    </div>
+  </div>
+          
+            </div>
+            <div class="form-group mt-3">
+              <button type="submit" (click)="addchef()" value="Addchef" class="button button-contactForm btn_4">Send Message</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <div class="media-body">
+              <h3>Buttonwood, California.</h3>
+              <p>Rosemead, CA 91770</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <div class="media-body">
+              <h3>00 (440) 9865 562</h3>
+              <p>Mon to Fri 9am to 6pm</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <div class="media-body">
+              <h3>supportcolorlib.com</h3>
+              <p>Send us your query anytime!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+

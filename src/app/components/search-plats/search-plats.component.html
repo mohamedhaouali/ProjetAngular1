@@ -1,0 +1,77 @@
+
+  <!-- ================ contact section start ================= -->
+  <section class="contact-section section_padding">
+    <div class="container">
+ 
+
+      <div class="row">
+        <div class="col-12">
+          <h2 class="contact-title">Search</h2>
+        </div>
+        <div class="col-lg-8">
+           <form [formGroup]="searchForm">
+            <div class="row">
+           
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <input type="number" formControlName="price" class="form-control"   placeholder='Insert price ...'>
+                </div>
+              </div>
+
+  <div *ngIf="searchForm.controls['price'].invalid && 
+  (searchForm.controls['price'].touched || searchForm.controls['price'].dirty)"
+  
+   class="text-danger">
+
+    <div>
+
+      <div *ngIf="searchForm.controls['price'].errors?.['required']"> Price is required</div>
+      
+    </div>
+  </div>
+
+     
+            </div>
+            <div class="form-group mt-3">
+              
+               <input type="submit"  (click)="searchPlats()" class="btn btn-primary py-3 px-5" value="Search">
+            </div>
+
+             <!--Display MSG-->
+              <span class="text-danger">{{ errorMsg}}</span>
+               <!--Display matches-->
+               <div *ngFor="let m of platsTab" style="margin-top :100px">
+               <app-plat [infObj]="m"></app-plat>
+               </div>
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <div class="media-body">
+              <h3>Buttonwood, California.</h3>
+              <p>Rosemead, CA 91770</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <div class="media-body">
+              <h3>00 (440) 9865 562</h3>
+              <p>Mon to Fri 9am to 6pm</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <div class="media-body">
+              <h3>supportcolorlib.com</h3>
+              <p>Send us your query anytime!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+

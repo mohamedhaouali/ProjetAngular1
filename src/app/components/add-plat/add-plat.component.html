@@ -1,0 +1,112 @@
+
+  <!-- ================ contact section start ================= -->
+  <section class="contact-section section_padding">
+    <div class="container">
+ 
+
+      <div class="row">
+        <div class="col-12">
+          <h2 class="contact-title">Add Plat</h2>
+        </div>
+        <div class="col-lg-8">
+          <form class="form-contact contact_form"  method="post" id="contactForm"
+            novalidate="novalidate" [formGroup]="addplatForm">
+            <div class="row">
+           
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <input class="form-control"  formControlName="name" name="name" id="name" type="text"  placeholder='Enter your  Name'>
+                </div>
+              </div>
+
+  <div *ngIf="addplatForm.controls['name'].invalid && 
+  (addplatForm.controls['name'].touched || addplatForm.controls['name'].dirty)"
+  
+   class="text-danger">
+
+    <div>
+
+      <div *ngIf="addplatForm.controls['name'].errors?.['required']"> Name is required</div>
+      <div *ngIf="addplatForm.controls['name'].errors?.['minlength']"> Name must be at least 3 characters long</div>
+      <div *ngIf="addplatForm.controls['name'].errors?.['pattern']"> Name must contain only letters</div>
+    </div>
+  </div>
+
+
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <input class="form-control" formControlName="description" name="description" id="description" type="text" 
+                     placeholder='Enter description'>
+                </div>
+              </div>
+
+               <div *ngIf="addplatForm.controls['description'].invalid && 
+  (addplatForm.controls['description'].touched || addplatForm.controls['description'].dirty)"
+  
+   class="text-danger">
+
+    <div>
+
+      <div *ngIf="addplatForm.controls['description'].errors?.['required']"> description is required</div>
+      <div *ngIf="addplatForm.controls['description'].errors?.['minlength']">description must be at least 3 characters long</div>
+      <div *ngIf="addplatForm.controls['description'].errors?.['pattern']"> description must contain only letters</div>
+    </div>
+  </div>
+
+                 <div class="col-sm-12">
+                <div class="form-group">
+                  <input class="form-control"  formControlName="price"name="price" id="text" type="number" 
+                 placeholder='Enter price'>
+                </div>
+              </div>
+
+              
+               <div *ngIf="addplatForm.controls['price'].invalid && 
+  (addplatForm.controls['price'].touched || addplatForm.controls['price'].dirty)"
+  
+   class="text-danger">
+
+    <div>
+
+      <div *ngIf="addplatForm.controls['price'].errors?.['required']"> price is required</div>
+      <div *ngIf="addplatForm.controls['price'].errors?.['minlength']"> exprience must be at least 2 characters long</div>
+      <div *ngIf="addplatForm.controls['price'].errors?.['pattern']"> exprience must contain only numbers</div>
+    </div>
+  </div>
+          
+            </div>
+            <div class="form-group mt-3">
+              <button type="submit" (click)="addplat()" value="Addplat" class="button button-contactForm btn_4">Send Message</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <div class="media-body">
+              <h3>Buttonwood, California.</h3>
+              <p>Rosemead, CA 91770</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <div class="media-body">
+              <h3>00 (440) 9865 562</h3>
+              <p>Mon to Fri 9am to 6pm</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <div class="media-body">
+              <h3>supportcolorlib.com</h3>
+              <p>Send us your query anytime!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
